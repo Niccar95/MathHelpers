@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplier</title>
+</head>
+<body>
+      <h1>Multiples Program</h1>
+
+    <form method="POST">
+        <label for="number">Enter a number:</label>
+        <input type="text" id="number" name="number" required />
+        <button type="submit">Get Multiples</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if multiples %}
+        <h2>Multiples of {{ number }} up to {{ number * 10 }}:</h2>
+        <ul>
+            {% for val in multiples %}
+                <li>{{ val }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+</body>
+</html>
