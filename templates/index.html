@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiplier</title>
+    <title>MathHelpers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
       <h1>Multiples Program</h1>
@@ -19,13 +20,18 @@
     {% endif %}
 
     {% if multiples %}
-        <h2>Multiples of {{ number }} up to {{ number * 10 }}:</h2>
+    <h2>Multiples of {{ number }} up to {{ number * 10 }}:</h2>
+    {% endif %}
+    
+    <div class="resultContainer">
+        {% if multiples %}
         <ul>
             {% for val in multiples %}
                 <li>{{ val }}</li>
             {% endfor %}
         </ul>
-    {% endif %}
+        {% endif %}
+    </div>
     
 </body>
 </html>
